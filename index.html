@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/mainCss.css">
+  <script src="../../../assets/javascripts/libs/mediaqueries-ie.js" type="text/javascript"></script><script src="../../../assets/javascripts/libs/html5shiv.js" type="text/javascript"></script>
+  <link href="../../../assets/stylesheets/docs.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="//assets.locaweb.com.br/locastyle/3.10.1/stylesheets/locastyle.css">
+
+</head>
+<body>
+
+   
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+
+    <div class="w3-col s8 w3-bar"> 
+      <h4><i class="fas fa-dice-d20 w3-circle w3-large"></i> RPG<strong>PLAYER</strong></h4>
+    </div>
+    
+    <br>
+    <hr>
+    <div class="w3-container">
+        <h5>Player Controls</h5>
+    </div>
+    <div class="w3-bar-block">
+        <a id="bt" href="#" class="w3-bar-item w3-button w3-padding" style="border-radius: 10px;"><i class="fas fa-plus-circle"></i> Adicionar atalho</a>
+    </div>
+    <hr>
+
+    <div class="w3-grey w3-container" style="border-radius: 5px;">
+
+      <div class="w3-col s8 w3-bar">
+        <h5 class="">Lista de Atalhos:</h5>
+      </div>
+      <hr>
+      <div id="listaDeAtalhos" class="w3-round w3-bar-block w3-light-gray">
+        <a href="#" class="w3-round w3-bar-item w3-button w3-padding"><i class="fas fa-times-circle"onclick="criaListaResumo()"></i>  Views</a>
+        <a href="#" class="w3-round w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
+        <a href="#" class="w3-round w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
+      </div>  
+      <br>
+
+    </div>
+
+  </div>  
+</nav>
+
+
+
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+    <div class="divAudios">
+    </div>
+
+  
+  <!-- Footer 
+  <footer class="w3-container w3-padding-32 w3-grey">  
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <h3>INFO</h3>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>      
+      </div>
+    
+      <div class="w3-third">
+        <h3>BLOG POSTS</h3>
+        <ul class="w3-ul">
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Lorem</span><br>
+            <span>Sed mattis nunc</span>
+          </li>
+          <li class="w3-padding-16 w3-hover-black">
+            <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Ipsum</span><br>
+            <span>Praes tinci sed</span>
+          </li> 
+        </ul>
+      </div>
+
+      <div class="w3-third">
+        <h3>POPULAR TAGS</h3>
+        <p>
+          <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
+          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Games</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+ End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+
+
+<script src="funcoes/jquery.js"></script>
+<script src="funcoes/scripts.js"></script>
+<script src="funcoes/funcaoteclado.js"></script>
+</body>
+</html>
