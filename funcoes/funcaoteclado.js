@@ -2,43 +2,39 @@ var press = 0;//validador para ler o teclado
 var press2  = 0;//validador para ler os audios
 var atalho = [];//array para guardar a tecla e o audio q vão formar o atalho
 var listaAtalhos = [];//lista de atalhos existentes
-criaListaResumo();
 
-//cria a lista de atalhos
-function criaListaAtalhos(){
-  var obj = document.cookie.split(",");
-  for(var i=0;i<obj.length-1;i++){
-    listaAtalhos[i] = [obj[i].split(":")];
-  }  
-  criaListaResumo();
-}
 //chama o criador de lista casao já exista algum registro nos cookies
 if(document.cookie.length>0){
   criaListaAtalhos(); 
   console.log(listaAtalhos);
 }
 
+//cria a lista de atalhos
+function criaListaAtalhos(){
+  listaAtalhos = [];
+  var obj = document.cookie.split(",");
+  for(var i=0;i<obj.length-1;i++){
+    listaAtalhos[i] = [obj[i].split(":")];
+  }  
+  criaListaResumo();
+}
+
 //cria a lista de atalhos 
 function criaListaResumo(){
-  alert("s");
-  $('#listaDeAtalhos').empty();
+  //alert("s1");
+  $('#listaDeAtalhos').html("");
+  //$('#listaDeAtalhos').empty();
   for (var i = 0; i < listaAtalhos.length; i++) {
     var nome = listaAtalhos[i][0][2];
     var letra = String.fromCharCode(listaAtalhos[i][0][0]);
     var id = listaAtalhos[i][0][1];
+    //alert(i); 
     $('#listaDeAtalhos').append('<a href="#" class="w3-round w3-bar-item w3-button w3-padding"><i class="fas fa-times-circle"onclick="deletaAtalho('+id+','+listaAtalhos[i][0][0]+')"></i> <i class="fas fa-play"onclick="tocaAudio('+id+')"></i>    '+letra+' = '+nome+'</a>');
    
   }
 }
 
-//toca o audio da lista de atalhos
-function tocaAudio(idAudio){
-  document.getElementById(idAudio).play();
-}
-
-
 //deleta atalho
-/*
 function deletaAtalho(id,tecla){
   var novaLista = "";
   for (var i = 0; i < listaAtalhos.length; i++) {
@@ -47,26 +43,35 @@ function deletaAtalho(id,tecla){
       }
   }
   document.cookie = novaLista;
-  alert(novaLista);
-  alert(document.cookie);
+  //alert(novaLista);
+  //alert(document.cookie);
   criaListaAtalhos();
 }
-*/
+
+//toca o audio da lista de atalhos
+function tocaAudio(idAudio){
+  document.getElementById(idAudio).play();
+}
+
+
 
 $(function(){
   //ouve o botão q começa a criação de um atalho
   $('#bt').click(function(){
+    alert('Clique em "ok" e Pressione a tecla que deseja configurar');
     press = 1;
   });
   //fica escutando o teclado
   $('body').keypress(function(event){
     var tecla = event.keyCode;
     if(press == 1){//verifica se o botão foi apertado se sim permite q seja registrada a tecla apertada
-      alert(tecla);
+      //alert(tecla);
       atalho[0] = tecla;
       press = 0;//trava o registro de teclas ate o botão ser apertado novamente
       press2 = 1;//libera o registro do audio 
+      alert('Clique no botão "Adicionar" no audio que deseja associar a letra: "'+String.fromCharCode(tecla)+'"');
     }else{
+      //toca o audui vinculado a tecla
       for (var i = 0; i < listaAtalhos.length; i++) {
         console.log(listaAtalhos[i][0][0]+"="+tecla);
         if(listaAtalhos[i][0][0] == tecla){
@@ -81,7 +86,7 @@ $(function(){
 //seleciona o audio para criar o atalho
 function selcAudio(idAudio,nameAudio){
   if(press2 == 1){//verifica se o registro do audio foi liberado pelo passo anterior 
-    alert(idAudio);
+    //alert(idAudio);
     atalho[1] = idAudio;
     press2 = 0;//trava o registro de audio ate um novo procedijento de criar atolhos ser iniciado
     document.cookie += atalho[0]+":"+atalho[1]+":"+nameAudio+",";
