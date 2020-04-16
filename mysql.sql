@@ -14,7 +14,7 @@ CREATE TABLE audios(
   audio varchar(200) DEFAULT NULL,
   imagem varchar(200) DEFAULT NULL,
   PRIMARY KEY (cod_audio)
-)
+);
 
 SELECT * FROM audios;
 
