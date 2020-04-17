@@ -16,7 +16,7 @@ $(function(){
                 name += Audio.nome_audio;
                 name+="'";
 
-                tbodyEl.append('<div class="w3-container w3-padding w3-card w3-round w3-white" name="'+Audio.cod_audio+'" style="margin: 10px"> <div class="w3-container"> <p>'+Audio.categoria+':</p> <p class="w3-center"><img src="'+Audio.imagem+'" class="w3-circle" style="height:200px;width:200px" alt="Avatar"></p> <h4 class="w3-center">'+Audio.nome_audio+'</h4> <audio id="'+Audio.cod_audio+'" value="'+Audio.nome_audio+'" controls><source src="'+Audio.audio+'" type="audio/'+Audio.tipo+'"></audio> <hr> <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Descrição: '+Audio.descricao+'</p> <button type="button" class="w3-button w3-gray w3-round" onclick="selcAudio('+Audio.cod_audio+','+name+')"><i class="fas fa-plus"></i>  Adicionar</button> <br></div> </div>');
+                tbodyEl.append('<div class="w3-container w3-padding w3-card w3-round w3-white" name="'+Audio.cod_audio+'" style="margin: 10px"> <div class="w3-container"> <p class="w3-center"><img src="'+Audio.imagem+'" class="w3-circle" style="height:200px;width:200px" alt="Avatar"></p> <h4 class="w3-center">'+Audio.nome_audio+'</h4> <p class="w3-center">'+Audio.categoria+'</p> <audio id="'+Audio.cod_audio+'" value="'+Audio.nome_audio+'" controls><source src="'+Audio.audio+'" type="audio/'+Audio.tipo+'"></audio> <hr> <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>Descrição: '+Audio.descricao+'</p> <button type="button" class="w3-button w3-gray w3-round" onclick="selcAudio('+Audio.cod_audio+','+name+')"><i class="fas fa-plus"></i>  Adicionar</button> <br></div> </div>');
             });
         }
            
