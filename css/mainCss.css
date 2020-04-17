@@ -19,7 +19,7 @@ main{
 }*/
 
 .divAudios{
-    background-color: indianred;
+    background-color: #9e9e9e;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
